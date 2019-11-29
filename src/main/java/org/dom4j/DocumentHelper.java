@@ -14,9 +14,7 @@ import java.util.Map;
 import java.util.StringTokenizer;
 
 /**
- * <code>DocumentHelper</code> is a collection of helper methods for using
- * DOM4J.
- *
+ * <code>DocumentHelper</code> is a collection of helper methods for using DOM4J.
  * @author <a href="mailto:jstrachan@apache.org">James Strachan </a>
  * @version $Revision: 1.26 $
  */
@@ -120,18 +118,12 @@ public final class DocumentHelper {
      * DocumentFactory}.
      * </p>
      * 
-     * @param xpathExpression
-     *            is the XPath expression to create
-     * @param context
-     *            is the variable context to use when evaluating the XPath
-     * 
+     * @param xpathExpression  is the XPath expression to create
+     * @param context  is the variable context to use when evaluating the XPath
      * @return a new <code>XPath</code> instance
-     * 
-     * @throws InvalidXPathException
-     *             if the XPath expression is invalid
+     * @throws InvalidXPathException  if the XPath expression is invalid
      */
-    public static XPath createXPath(String xpathExpression,
-                                    VariableContext context) throws InvalidXPathException {
+    public static XPath createXPath(String xpathExpression,VariableContext context) throws InvalidXPathException {
         return getDocumentFactory().createXPath(xpathExpression, context);
     }
 

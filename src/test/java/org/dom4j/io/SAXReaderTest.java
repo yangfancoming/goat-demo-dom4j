@@ -12,7 +12,6 @@ import java.util.List;
 
 /**
  * A test harness to test the content API in DOM4J
- * @author <a href="mailto:maartenc@sourceforge.net">Maarten Coene </a>
  */
 public class SAXReaderTest extends AbstractTestCase {
 

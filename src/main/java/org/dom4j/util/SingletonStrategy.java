@@ -27,7 +27,6 @@ public interface SingletonStrategy<T> {
      * set a singleton class name that will be used to create the singleton
      * based on the strategy implementation of this interface. The default
      * constructor of the class will be used and must be public.
-     *
      * @param singletonClassName DOCUMENT ME!
      */
     void setSingletonClassName(String singletonClassName);

@@ -15,8 +15,6 @@ import java.io.StringReader;
 
 /**
  * A test harness to test the native DOM implementation of dom4j
- * 
- * @author <a href="mailto:james.strachan@metastuff.com">James Strachan </a>
  * @version $Revision: 1.4 $
  */
 public class DOMTest extends AbstractTestCase {
@@ -65,7 +63,6 @@ public class DOMTest extends AbstractTestCase {
         // <-- Fails here when the code is broken.
         oParent.setAttribute("name", "N01");
         oParent.setAttribute("id", "ID01");
-
         oDocument.appendChild(oParent); // <-- Fails here, Error message is
         // below
     }

@@ -32,17 +32,15 @@ public class IteratorTest extends AbstractTestCase {
     }
 
 
-    public void testElementCount() throws Exception {
+    public void testElementCount()  {
         Element root = iterDocument.getRootElement();
         assertTrue("Has root element", root != null);
-
         List elements = root.elements("iterator-test");
         int elementSize = elements.size();
-        assertTrue("Root has " + elementSize + " children", (elements != null)
-                && (elementSize == NUMELE));
+        assertTrue("Root has " + elementSize + " children", (elements != null) && (elementSize == NUMELE));
     }
 
-    public void testPlainIteration() throws Exception {
+    public void testPlainIteration()  {
         Element root = iterDocument.getRootElement();
         List elements = root.elements("iterator-test");
         Iterator iter = root.elementIterator("iterator-test");
@@ -61,7 +59,7 @@ public class IteratorTest extends AbstractTestCase {
         assertTrue(elementSize + " elements iterated", count == elementSize);
     }
 
-    public void testSkipAlternates() throws Exception {
+    public void testSkipAlternates()  {
         Element root = iterDocument.getRootElement();
         List elements = root.elements("iterator-test");
         Iterator iter = root.elementIterator("iterator-test");
@@ -81,7 +79,7 @@ public class IteratorTest extends AbstractTestCase {
                 count == (elementSize / 2));
     }
 
-    public void testNoHasNext() throws Exception {
+    public void testNoHasNext()  {
         Element root = iterDocument.getRootElement();
         List elements = root.elements("iterator-test");
         Iterator iter = root.elementIterator("iterator-test");
@@ -113,7 +111,7 @@ public class IteratorTest extends AbstractTestCase {
         }
     }
 
-    public void testExtraHasNexts() throws Exception {
+    public void testExtraHasNexts()  {
         Element root = iterDocument.getRootElement();
         List elements = root.elements("iterator-test");
         Iterator iter = root.elementIterator("iterator-test");

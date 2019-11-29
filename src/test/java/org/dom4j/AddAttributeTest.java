@@ -4,9 +4,9 @@ package org.dom4j;
 
 /**
  * A test harness to test the addAttribute() methods on attributes
- * @author <a href="mailto:maartenc@users.sourceforge.net">Maarten Coene </a>
  */
 public class AddAttributeTest extends AbstractTestCase {
+
 
     public void testAddAttributeNormalValue()  {
         String testAttributeName = "testAtt";

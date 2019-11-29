@@ -6,13 +6,11 @@ import org.testng.annotations.BeforeClass;
 
 /**
  * Tests the {@link DocumentHelper#parseText(String)}method.
- * 
- * @author <a href="mailto:jstrachan@apache.org">James Strachan </a>
  * @version $Revision: 1.3 $
  */
 public class ParseTextTest extends AbstractTestCase {
-    protected String xmlText =  "<root><author name='James'><location>Paris</location></author></root>";
 
+    protected String xmlText =  "<root><author name='James'><location>Paris</location></author></root>";
 
     public void testDocument()  {
         assertTrue("Document is not null", document != null);

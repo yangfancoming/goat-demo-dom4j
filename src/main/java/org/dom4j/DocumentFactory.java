@@ -18,15 +18,12 @@ import java.util.Map;
 
 /**
  * <code>DocumentFactory</code> is a collection of factory methods to allow
- * easy custom building of DOM4J trees. The default tree that is built uses a
- * doubly linked tree.
- *
+ * easy custom building of DOM4J trees. The default tree that is built uses a doubly linked tree.
  * The tree built allows full XPath expressions from anywhere on the tree.
- *
- * @author <a href="mailto:jstrachan@apache.org">James Strachan </a>
  */
 @SuppressWarnings("unused")
 public class DocumentFactory implements Serializable {
+
     private static SingletonStrategy<DocumentFactory> singleton = null;
 
     protected transient QNameCache cache;
@@ -35,20 +32,18 @@ public class DocumentFactory implements Serializable {
     private Map<String, String> xpathNamespaceURIs;
 
     private static SingletonStrategy<DocumentFactory> createSingleton() {
+
         SingletonStrategy<DocumentFactory> result;
         
         String documentFactoryClassName;
         try {
-            documentFactoryClassName = System.getProperty("org.dom4j.factory",
-                    "org.dom4j.DocumentFactory");
+            documentFactoryClassName = System.getProperty("org.dom4j.factory","org.dom4j.DocumentFactory");
         } catch (Exception e) {
             documentFactoryClassName = "org.dom4j.DocumentFactory";
         }
 
         try {
-            String singletonClass = System.getProperty(
-                    "org.dom4j.DocumentFactory.singleton.strategy",
-                    "org.dom4j.util.SimpleSingleton");
+            String singletonClass = System.getProperty("org.dom4j.DocumentFactory.singleton.strategy","org.dom4j.util.SimpleSingleton");
             Class<SingletonStrategy> clazz = (Class<SingletonStrategy>) Class.forName(singletonClass);
             result = clazz.newInstance();
         } catch (Exception e) {
@@ -65,7 +60,6 @@ public class DocumentFactory implements Serializable {
     /**
      * Access to singleton implementation of DocumentFactory which is used if no
      * DocumentFactory is specified when building using the standard builders.
-     *
      * @return the default singleon instance
      */
     public static synchronized DocumentFactory getInstance() {
@@ -79,18 +73,13 @@ public class DocumentFactory implements Serializable {
     public Document createDocument() {
         DefaultDocument answer = new DefaultDocument();
         answer.setDocumentFactory(this);
-
         return answer;
     }
 
     /**
      * DOCUMENT ME!
-     * 
-     * @param encoding
-     *            DOCUMENT ME!
-     * 
+     * @param encoding  DOCUMENT ME!
      * @return DOCUMENT ME!
-     * 
      * @since 1.5
      */
     public Document createDocument(String encoding) {
@@ -98,7 +87,6 @@ public class DocumentFactory implements Serializable {
         // in this not so nice way, since subclasses only need to extend the
         // createDocument() method.
         Document answer = createDocument();
-
         answer.setXMLEncoding(encoding);
         return answer;
     }
@@ -106,12 +94,10 @@ public class DocumentFactory implements Serializable {
     public Document createDocument(Element rootElement) {
         Document answer = createDocument();
         answer.setRootElement(rootElement);
-
         return answer;
     }
 
-    public DocumentType createDocType(String name, String publicId,
-            String systemId) {
+    public DocumentType createDocType(String name, String publicId, String systemId) {
         return new DefaultDocumentType(name, publicId, systemId);
     }
 
@@ -148,7 +134,6 @@ public class DocumentFactory implements Serializable {
             String msg = "Adding text to an XML document must not be null";
             throw new IllegalArgumentException(msg);
         }
-
         return new DefaultText(text);
     }
 
@@ -160,13 +145,11 @@ public class DocumentFactory implements Serializable {
         return Namespace.get(prefix, uri);
     }
 
-    public ProcessingInstruction createProcessingInstruction(String target,
-            String data) {
+    public ProcessingInstruction createProcessingInstruction(String target, String data) {
         return new DefaultProcessingInstruction(target, data);
     }
 
-    public ProcessingInstruction createProcessingInstruction(String target,
-            Map<String, String> data) {
+    public ProcessingInstruction createProcessingInstruction(String target,  Map<String, String> data) {
         return new DefaultProcessingInstruction(target, data);
     }
 
@@ -187,27 +170,17 @@ public class DocumentFactory implements Serializable {
     }
 
     /**
-     * <p>
      * <code>createXPath</code> parses an XPath expression and creates a new
      * XPath <code>XPath</code> instance.
-     * </p>
-     * 
-     * @param xpathExpression
-     *            is the XPath expression to create
-     * 
+     * @param xpathExpression is the XPath expression to create
      * @return a new <code>XPath</code> instance
-     * 
-     * @throws InvalidXPathException
-     *             if the XPath expression is invalid
+     * @throws InvalidXPathException if the XPath expression is invalid
      */
-    public XPath createXPath(String xpathExpression)
-            throws InvalidXPathException {
+    public XPath createXPath(String xpathExpression)  throws InvalidXPathException {
         DefaultXPath xpath = new DefaultXPath(xpathExpression);
-
         if (xpathNamespaceURIs != null) {
             xpath.setNamespaceURIs(xpathNamespaceURIs);
         }
-
         return xpath;
     }
 

@@ -4,8 +4,6 @@ package org.dom4j;
 
 /**
  * A test harness to test the addNode() methods on node
- * 
- * @author Philippe Ombredanne
  */
 public class AddNodeTest extends AbstractTestCase {
 

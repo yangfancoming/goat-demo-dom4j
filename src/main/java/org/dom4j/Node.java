@@ -425,14 +425,9 @@ public interface Node extends Cloneable {
     List<Node> selectNodes(String xpathExpression, String comparisonXPathExpression, boolean removeDuplicates);
 
     /**
-     * <p>
      * selectSingleNodeevaluates an XPath expression and returns
      * the result as a single Nodeinstance.
-     * </p>
-     * 
-     * @param xpathExpression
-     *            is the XPath expression to be evaluated
-     * 
+     * @param xpathExpression is the XPath expression to be evaluated
      * @return the Nodematching the XPath expression
      */
     Node selectSingleNode(String xpathExpression);
