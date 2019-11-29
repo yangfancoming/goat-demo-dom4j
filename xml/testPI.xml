@@ -1,12 +1,12 @@
 <?pi  first='true'?>
 <root>
-  Hello he <?middle value='something'?> said. 
+    Hello he <?middle value='something'?> said.
 
-  <!-- This is a comment -->
+    <!-- This is a comment -->
 
-  <a href="http://dom4j.org">The DOM4J home page.</a>
+    <a href="http://dom4j.org">The DOM4J home page.</a>
 
-  More text!
+    More text!
 
 </root>
-<?pi  last='true'?>
+        <?pi  last='true'?>
